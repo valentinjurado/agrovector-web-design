@@ -1,0 +1,46 @@
+body{
+    text-align: left;
+    margin: 0%;
+}
+
+button{
+    font-size: 11px;
+    color: white;
+    background-color: #0E5831;
+    width: 101px;
+    height: 34px;
+    border-radius: 30%;
+}
+
+h1{
+    font-size: 20px;
+    font-family: 'Contrail One', display;
+}
+
+h2{
+    font-size: 13px;
+    font-family: 'Arimo', display;
+}
+
+.main-info-container{
+    margin: 0%;
+}
+.main-text-container{
+    background-color: #F6F5F1;
+    width: 402px;
+    height: auto;
+}
+
+.main-img-container img{
+    width: 402px;
+    height: auto;
+}
+
+.capacitaciones-container{
+    margin: 0%;
+}
+
+.underline{
+    text-decoration: underline;
+    text-decoration-color: #0E5831;
+}
