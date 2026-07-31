@@ -1,15 +1,130 @@
+* {
+    box-sizing: border-box;
+}
+
 body{
     text-align: left;
     margin: 0%;
 }
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+header {
+    position: sticky;
+    top: 0;                  /* Lo suelda al techo de la pantalla */
+    z-index: 1000;           /* Asegura que siempre esté por encima de las fotos al scrollear */
+    background-color: #F6F5F1; /* Fondo blanco para que no se mezclen las letras */
+    transition: all 0.3s ease-in-out;
+}
 
-button{
-    font-size: 11px;
-    color: white;
+.hidden-header{
+    transform: translateY(-100%);
+}
+
+.logo{
+    width: 53px;
+}
+
+.navbar {
+    position: relative;
+    display: flex;
+    justify-content: space-between; /* Logo a la izq, hamburguesa a la der */
+    align-items: center;
+    padding: 0px 20px 0px 20px;
+}
+
+/* Ocultamos los links sueltos en el celular */
+.nav-links {
+    height: auto;
+    display: none; 
+}
+
+.nav-links.activo {
+    display: flex;
+    flex-direction: column;
+    background-color: #F6F5F1;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 30px; /* Le da un poco de aire debajo del botón CONTACTANOS */
+}
+
+.nav-links.activo li {
+    padding-bottom: 10px;
+    list-style: none;
+}
+
+.nav-links.activo li a {
+    text-decoration: none;
+    font-family: 'Arimo', sans-serif;
+    font-size: 18px;
+}
+
+.submenu {
+    display: none;
+    flex-direction: column;
+    padding: 0;
+    margin-top: 15px;
+    background-color: #F6F5F1;
+    width: 100%;
+}
+
+.submenu li {
+    padding: 12px 0;
+}
+
+.submenu li a {
+    font-size: 16px;
+    color: #313418;
+}
+
+/* Esta clase se la agregará el JS cuando toquen la palabra "productos" */
+.item-submenu.abierto .submenu {
+    display: flex;
+}
+
+.mobile-contact-btn{
+    display: block;
     background-color: #0E5831;
-    width: 101px;
+    width: 110px; 
     height: 34px;
-    border-radius: 30%;
+    border: none;
+    border-radius: 30px; 
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mobile-contact-btn{
+    color: white;
+    font-family: 'Arimo', sans-serif;
+    font-size: 13px;
+}
+
+.mobile-contact-btn:hover{
+    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
+}
+
+/* Ocultamos el botón verde en el celular */
+.desktop-contact-btn {
+    display: none;
+}
+
+/* Estilo para que la hamburguesa se vea bien */
+.menu-desplegable {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: black;
+    cursor: pointer;
+}
+
+a {
+    color: #313418;
 }
 
 h1{
@@ -17,30 +132,370 @@ h1{
     font-family: 'Contrail One', display;
 }
 
-h2{
-    font-size: 13px;
+p{
+    font-size: 15px;
     font-family: 'Arimo', display;
 }
 
 .main-info-container{
+    width: 100%;
     margin: 0%;
 }
-.main-text-container{
+.main-text-container {
     background-color: #F6F5F1;
-    width: 402px;
-    height: auto;
+    width: 100%;
+    padding: 24px 16px 10px 16px; /* Achicamos el de abajo a 16px */
+    box-sizing: border-box;
 }
 
-.main-img-container img{
-    width: 402px;
-    height: auto;
+.main-text-container h1{
+    margin-bottom: 12px;
+    text-align: center;
+    white-space: inherit;
 }
+.main-text-container p{
+    margin-bottom: 5px;
+}
+
+.main-img-container {
+    position: relative; 
+    width: 100%;
+}
+
+button a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Arimo', sans-serif;
+}
+/* 2. Estilos visuales del botón para TODO tamaño de pantalla */
+.btn-conoce-mas {
+    display: block;
+    background-color: #0E5831;
+    width: 110px; 
+    height: 34px;
+    border: none;
+    border-radius: 30px; 
+    font-size: 13px;
+    /* Lo posicionamos flotando sobre la imagen */
+    position: absolute;
+    top: 15px;    /* Un poco menos de margen que en la PC */
+    right: 15px;  /* Pegadito a la derecha */
+    z-index: 10;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+.btn-conoce-mas:hover{
+    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
+}
+
+.main-img-container img {
+    width: 100%;       /* Tope máximo: el ancho de la pantalla */
+    height: 369px;     /* La altura que querés en el diseño */
+    object-fit: cover; /* Recorta los bordes de la foto sin deformarla */
+    display: block;    /* Saca un espacio fantasma de 4px que suele quedar abajo de las fotos */
+}
+
+/*CAPACITACIONES*/
 
 .capacitaciones-container{
     margin: 0%;
+    padding-top: 50px;
+}
+
+.capacitaciones-text-container {
+    width: 87%;
+    margin: 0 auto;
+    padding-bottom: 15px; /* Un poco de aire antes de que arranque el carrusel */
+}
+
+.capacitaciones-text-container {
+    text-align: center;
 }
 
 .underline{
     text-decoration: underline;
     text-decoration-color: #0E5831;
+}
+
+/*carrousel fotos capacitaciones*/
+.carrousel-img-container {
+    width: 95%;          /* Lo achicamos para que mida exactamente igual que tu texto */
+    margin: 0 auto;      /* Lo centramos para que los márgenes coincidan */
+    padding-bottom: 30px; /* Mantenemos el espacio de los puntitos */
+}
+
+/* Le das un alto fijo al contenedor de la grilla en mobile */
+.swiper-slide {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 6px;
+  height: 173px; /* Ajustás esta altura general y el grid escala las fotos solo */
+}
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-slide .big-img1 {
+  grid-column: 1;
+  grid-row: 1 / 3; /* Ocupa columna 1 completa (alto total) */
+}
+
+.swiper-slide .small-img1 {
+  grid-column: 2;
+  grid-row: 1;     /* Columna centro, arriba */
+}
+
+.swiper-slide .small-img2 {
+  grid-column: 2;
+  grid-row: 2;    /* Columna centro, abajo */
+}
+
+.swiper-slide .big-img2 {
+  grid-column: 3;
+  grid-row: 1 / 3; /* Ocupa columna 3 completa (alto total) */
+}
+
+.swiper-slide .big-img1, 
+.swiper-slide .big-img2{
+    height: 173px;
+}
+
+.swiper-slide .small-img1,
+.swiper-slide .small-img2{
+    height: 80px;
+}
+
+.swiper-pagination-bullet {
+    width: 15px;
+    height: 3px;
+    border-radius: 0px;
+    background-color: #0E5831;
+    opacity: 0.4;
+    margin: 0 6px ;
+    transition: all 0.3s ease;  /* Animación suave cuando cambia de slide */
+}
+
+.swiper-pagination-bullet-active {
+    width: 30px;
+    background-color: #0E5831;
+    opacity: 1;
+}
+
+
+/*PRODUCTOS*/
+.products-container{
+    padding-top: 50px;
+}
+
+.products-main-info {
+    background-color: #F6F5F1;
+    width: 90%;
+    margin: 0 auto; /* Esto lo centra perfecto alineado con el texto de arriba */
+    height: auto;
+    padding: 20px; /* Espacio interno para que las marcas no toquen los bordes */
+}
+
+.products-main-text {
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 15px; /* Un poco de aire antes de la caja de marcas */
+}
+
+.products-main-text h1{
+    text-align: center;
+}
+
+/* Centra el contenedor para que quede angosto al medio */
+.brand-text {
+    width: 85%;
+    margin: 0 auto;
+    text-align: left; /* Las letras se quedan a la izquierda */
+    margin-bottom: 23px; /* Espacio antes de los productos */
+}
+
+/* Centra el H1 específicamente (como en tu diseño) */
+.brand-text h1 {
+    text-align: center;
+    margin: 0 0 10px 0;
+}
+
+
+/* =========================================
+   CARRUSEL DE PRODUCTOS (.productos-grid)
+   ========================================= */
+
+/* Como Swiper se encarga de ponerlos en fila, no usamos display: grid; */
+.productos-grid {
+    width: 100%;
+    margin-bottom: 15px; /* Separación con la marca de abajo */
+}
+
+.producto-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-name {
+    text-align: left;
+    font-size: 13px;
+    font-family: 'Arimo', sans-serif;
+    margin-bottom: 4px;
+    display: block; /* Para que baje la imagen */
+}
+
+.producto-item img {
+    width: 100%;
+    /* Poné un alto fijo (ej. 80px) cuando subas las fotos reales para que todas queden iguales */
+    height: auto; 
+    object-fit: cover;
+}
+
+/*desktop*/
+
+@media (min-width: 1024px) {
+    /* Los cambios fuertes para monitores de PC van acá */
+    .menu-desplegable {
+        display: none;
+    }
+
+    /* 2. Le damos más aire a los bordes de la barra en monitores grandes */
+    .navbar {
+        padding: 0 60px;
+        height: 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* 3. Mostramos los links y los ponemos en fila horizontal */
+    .nav-links {
+        display: flex;
+        gap: 30px;
+        list-style: none;
+        margin-left: 40px;
+        margin-right: auto;
+        padding: 0;
+        margin: 0 auto 0 40px;
+        height: auto;
+    }
+
+    .nav-links .logo,
+    .mobile-contact-btn{
+        display: none;
+    }
+
+    /* Le damos el estilo a los textos del menú */
+    .nav-links li a {
+        text-decoration: none;
+        font-family: 'Arimo', sans-serif;
+    }
+
+    .item-submenu {
+        position: relative; /* Sirve de ancla para que el submenú caiga justo debajo */
+    }
+
+    .submenu {
+        display: none; /* Aseguramos que siga oculto */
+        position: absolute;
+        top: 100%; /* Cae justo debajo de la barra */
+        left: 50%;
+        transform: translateX(-50%); /* Lo centra perfectamente con la palabra 'productos' */
+        list-style: none;
+        min-width: 200px;
+        padding: 10px 0;
+        margin-top: 0;
+    }
+
+    /* En la compu, el submenú aparece al pasar el MOUSE (hover), no hace falta hacer click */
+    .item-submenu:hover .submenu {
+        display: flex;
+    }
+
+    .submenu li {
+        padding: 10px 20px;
+        text-align: left;
+    }
+
+    .submenu li a:hover {
+        color: #0E5831; /* Un verde más claro al pasar el mouse por las opciones */
+    }
+
+    /* 4. Mostramos el botón de CONTACTANOS y le damos estilo */
+    .desktop-contact-btn {
+        display: block;
+        background-color: #0E5831;
+        width: 115px; 
+        height: 40px;
+        border: none;
+        border-radius: 30px; 
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .desktop-contact-btn:hover {
+        box-shadow: inset 0px 6px 9px rgba(0, 0, 0, 0.5) ;
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+
+    h1{
+        font-size: 27px;
+    }
+
+    p{
+        font-size: 17px;
+    }
+
+    button{
+        font-size: 13px;
+    }
+
+    .main-text-container {
+        padding: 25px 20%; 
+    }
+
+    .main-text-container h1{
+        text-align: center;
+    }
+
+    .btn-conoce-mas {
+        display: none;
+    }
+    .main-img-container {
+        position: relative;
+        width: 100%;
+    }
+
+    .main-img-container img {
+        height: 590px;
+    }
+
+    .swiper-slide{
+        height: 426px;
+    }
+    .swiper-slide .big-img1, 
+    .swiper-slide .big-img2{
+        height: 426px;
+    }
+
+    .swiper-slide .small-img1,
+    .swiper-slide .small-img2{
+        height: 203px;
+    }
+
+    .brand-text {
+        width: 50%; /* En PC la caja ocupa la mitad de la pantalla */
+    }
+
+    .product-name{
+        font-size: 15px;
+    }
+
+    .productos-grid{
+        margin-bottom: 65px;
+    }
 }

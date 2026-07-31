@@ -8,55 +8,342 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;600;700&family=Contrail+One&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="main-container">
         <header>
             <nav class="navbar">
-            <!-- Aquí iría el logo de Agrovector -->
-                <div class="logo">Agrovector</div>
                 <button class="menu-desplegable">
                     ☰
                 </button>
-                <ul >
-                    <li><a href="">productos</a></li>
-                    <li><a href="">capacitaciones</a></li>
-                    <li><a href="">contacto</a></li>
+
+                <div class="logo">
+                    <img class="logo" src="img-web/LOGO AGROVECTOR.png">
+                </div>
+                
+                <!-- Le agregué la clase "nav-links" a tu ul -->
+                <ul class="nav-links">
+                    <!-- El logo para mobile -->
+                    <img class="logo" src="img-web/LOGO AGROVECTOR.png">
+                    
+                    <!-- ACÁ ESTÁ LA CLAVE: El li envuelve al link y al submenú -->
+                    <li class="item-submenu">
+                        <a href="#all-products" class="link-toggle">Productos ></a>
+                        
+                        <ul class="submenu">
+                            <li><a href="#gteex">GTEEX</a></li>
+                            <li><a href="#spraytec">SPRAYTEC</a></li>
+                            <li><a href="#dropsagro">DROPSAGRO</a></li>
+                            <li><a href="#tecnosulf">TECNOSULF</a></li>
+                            <li><a href="#agroadvance">AGROADVANCE</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#capacitaciones">Capacitaciones</a></li>
+                    <li><a href="">Sobre nosotros</a></li>
+
+                    <button class="mobile-contact-btn"><a href="https://www.whatsapp.com">CONTACTANOS</a></button>
                 </ul>
+
+                <button class="desktop-contact-btn"><a href="https://www.whatsapp.com">CONTACTANOS</a></button>
             </nav>
         </header>
         <div class="main-info-container">
             <div class="main-text-container">
                 <h1>SISTEMAS INTEGRALES PARA UN AGRO MÁS EFICIENTE Y SUSTENTABLE</h1>
-                <h2><p>No somos un distribuidor más. Te acompañamos antes, durante</p> 
-                    <p>y después de cada solución: asesoramiento técnico,</p>
-                    <p>capacitación real y presencia en toda la región.</p>
-                </h2>
+                <p>No somos un distribuidor más. Te acompañamos antes, durante
+                    y después de cada solución: asesoramiento técnico,
+                    capacitación real y presencia en toda la región.
+                </p>
             </div>
             <div class="main-img-container">
-                <button>CONOCÉ MÁS</button>
+                <button class="btn-conoce-mas"><a href="https://www.whatsapp.com">CONOCÉ MÁS</a></button>
                 <img src="img-web/DSC03789.jpg" alt="">
             </div>
         </div>
 
-        <div class="capacitaciones-container">
+        <div id="capacitaciones" class="capacitaciones-container">
             <div class="capacitaciones-text-container">
                 <h1 class="underline">CAPACITACIONES Y DEMOSTRACIONES TÉCNICAS</h1>
-                <h2>
-                    <p>tLorem ipsum dolor sit amet, consectetur adipiscing</p>
-                    <p>elit, sed do eiusmod tempor incididunt</p>
-                    <p>ut labore et dolore magna aliqua.</p>
-                    <p> Ut enim ad minim veniam, quis nostrud exercitation</p>
-                    <p>ullamco laboris nisi ut aliquip ex ea commodo</p>
-                    <p>consequat. Duis aute irure dolor in reprehenderit in</p>
-                    <p>voluptate velit esse cillum dolore eu fugiat nulla </p>
-                    <p>pariatur.</p>
-                </h2>
+                <p>
+                    tLorem ipsum dolor sit amet, consectetur adipiscing
+                    elit, sed do eiusmod tempor incididunt
+                    ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velit esse cillum dolore eu fugiat nulla
+                    pariatur.
+                </p>
             </div>
-            <div class="carrousel-img-container"></div>
+            <div class="carrousel-img-container swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" id="slide1">
+                        <img class="big-img1" src="img-web/WhatsApp Image 2026-03-05 at 8.40.47 AM.jpeg" alt="">
+                        <img class="small-img1" src="img-web/WhatsApp Image 2026-05-19 at 16.37.42.jpeg" alt="">
+                        <img class="small-img2" src="img-web/DSC03689.jpg" alt="">
+                        <img class="big-img2" src="img-web/WhatsApp Image 2026-03-05 at 8.41.10 AM (1).jpeg" alt="">
+                    </div>
+                    <div class="swiper-slide" id="slide2">
+                        <img class="big-img1" src="img-web/WhatsApp Image 2026-06-26 at 16.08.01-3.jpeg" alt="">
+                        <img class="small-img1" src="img-web/DSC03791.jpg" alt="">
+                        <img class="small-img2" src="img-web/DSC03707.jpg" alt="">
+                        <img class="big-img2" src="img-web/WhatsApp Image 2026-05-19 at 16.33.42-2.jpeg" alt="">
+                    </div>
+                    <div class="swiper-slide" id="slide3">
+                        <img class="big-img1" src="" alt="">
+                        <img class="small-img1" src="" alt="">
+                        <img class="small-img2" src="img-web/WhatsApp Image 2026-03-05 at 8.41.04 AM.jpeg" alt="">
+                        <img class="big-img2" src="img-web/WhatsApp Image 2026-07-08 at 15.32.47.jpeg" alt="">
+                    </div>
+                </div>
+
+                <div class="swiper-pagination"></div>
+            </div>
         </div>
-    </div>
+
+<!--
+
+PARTE VALEN sección 3 mobile
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->
+
+        <div id="all-products" class="products-container">
+            <div class="products-main-text">
+                <h1 class="underline">COMERCIALIZAMOS PRODUCTOS PARA EL AGRO</h1>
+                <p>
+                    Trabajamos con las marcas líderes en tecnología de aplicación, monitoreo y nutrición vegetal y animal. 
+                    Trabajamos en el armado de un sistema completo para que cada tecnología rinda al máximo en tu campo.
+                </p>
+            </div>
+            <div class="products-main-info">
     
+                    <!-- GTEEX -->
+                    <div class="product-info" id="gteex">
+                        <div class="brand-text">
+                            <h1 class="underline">GTEEX</h1>
+                            <p>
+                                tLorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                            </p>
+                        </div>
+
+                        <!-- Agregamos "swiper" al contenedor principal -->
+                        <div class="productos-grid swiper">
+                            <!-- Capa OBLIGATORIA de Swiper -->
+                            <div class="swiper-wrapper">
+                                <!-- Agregamos "swiper-slide" a cada item tuyo -->
+                                <div class="producto-item swiper-slide">
+                                    <span class="product-name">King-150 Max</span>
+                                    <img src="img-web/king150max.webp" alt="King 150 Max">
+                                </div>
+                                <div class="producto-item swiper-slide">
+                                    <span class="product-name">King-100</span>
+                                    <img src="img-web/king100.webp" alt="King 100">
+                                </div>
+                                <div class="producto-item swiper-slide">
+                                    <span class="product-name">GT-40</span>
+                                    <img src="img-web/gt40.webp" alt="GT 40">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SPRAYTEC -->
+                    <div class="product-info" id="spraytec">
+                        <div class="brand-text">
+                            <h1 class="underline">SPRAYTEC</h1>
+                            <p>
+                                tLorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                            </p>
+                        </div>
+
+                        <div class="productos-grid swiper">
+                            <div class="swiper-wrapper">
+                                <div class="producto-item swiper-slide">
+                                    <span class="product-name">producto 1</span>
+                                    <img src="" alt="">
+                                </div>
+                                <div class="producto-item swiper-slide">
+                                    <span class="product-name">producto 2</span>
+                                    <img src="" alt="">
+                                </div>
+                                <div class="producto-item swiper-slide">
+                                    <span class="product-name">producto 3</span>
+                                    <img src="" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DROPS AGRO -->
+                    <div class="product-info" id="dropsagro">
+                        <div class="brand-text">
+                            <h1 class="underline">DROPS AGRO</h1>
+                            <p>
+                                tLorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                            </p>
+                        </div>
+
+                        <div class="productos-grid swiper">
+                            <div class="swiper-wrapper">
+                                <div class="producto-item swiper-slide">
+                                    <span class="product-name">Drops lite 5"</span>
+                                    <img src="img-web/dropslite.jpeg" alt="">
+                                </div>
+                                <div class="producto-item swiper-slide">
+                                    <span class="product-name">Drops full 10"</span>
+                                    <img src="img-web/dropsfull.jpeg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TECNOSULF (Este al tener 5 se va a deslizar solo) -->
+                    <div class="product-info" id="tecnosulf">
+                        <div class="brand-text">
+                            <h1 class="underline">TECNOSULF</h1>
+                            <p>
+                                tLorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                            </p>
+                        </div>
+
+                        <div class="productos-grid swiper">
+                            <div class="swiper-wrapper">
+                                <div class="producto-item swiper-slide">
+                                    <span class="product-name">TecnoGreen</span>
+                                    <img src="img-web/tecnogreen.jpg" alt="">
+                                </div>
+                                <div class="producto-item swiper-slide">
+                                    <span class="product-name">TecnoTerra</span>
+                                    <img src="img-web/tecnoterra.png" alt="">
+                                </div>
+                                <div class="producto-item swiper-slide">
+                                    <span class="product-name">TecnoMax-Plus</span>
+                                    <img src="img-web/tecnomax-plus.jpg" alt="">
+                                </div>
+                                <div class="producto-item swiper-slide">
+                                    <span class="product-name">TecnoPonia</span>
+                                    <img src="img-web/tecnoponia.png" alt="">
+                                </div>
+                                <div class="producto-item swiper-slide">
+                                    <span class="product-name">TecnoDiet</span>
+                                    <img src="img-web/tecnodiet.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AGRO ADVANCE -->
+                    <div class="product-info" id="agroadvance">
+                        <div class="brand-text">
+                            <h1 class="underline">AGRO ADVANCE</h1>
+                            <p>
+                                tLorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                            </p>
+                        </div>
+
+                        <div class="productos-grid swiper">
+                            <div class="swiper-wrapper">
+                                <div class="producto-item swiper-slide">
+                                    <span class="product-name">Impact</span>
+                                    <img src="img-web/impact.webp" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
