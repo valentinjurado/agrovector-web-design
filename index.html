@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Agrovector</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;600;700&family=Contrail+One&display=swap" rel="stylesheet">
@@ -24,12 +24,12 @@
                     <img class="logo" src="img-web/LOGO AGROVECTOR.png">
                 </div>
                 
-                <!-- Le agregué la clase "nav-links" a tu ul -->
+             
                 <ul class="nav-links">
-                    <!-- El logo para mobile -->
+                
                     <img class="logo" src="img-web/LOGO AGROVECTOR.png">
                     
-                    <!-- ACÁ ESTÁ LA CLAVE: El li envuelve al link y al submenú -->
+                  
                     <li class="item-submenu">
                         <a href="#all-products" class="link-toggle">Productos ></a>
                         
@@ -105,9 +105,7 @@
             </div>
         </div>
 
-<!--
 
-PARTE VALEN sección 3 mobile
 
 
 
@@ -117,72 +115,110 @@ PARTE VALEN sección 3 mobile
 
 
 
+ <!-- SECCION  INTERACTIVA  -->
+
+</div>
+    <div class="interactive-container">
+        
+    
+        <div class="image-showcase">
+            <img src="img-web/DSC03791.jpg" alt="GTEEX" class="showcase-img active" id="img-0">
+            <img src="img-web/intregracion-multimarca.png" alt="Multimarca" class="showcase-img" id="img-1">
+            <img src="img-web/DSC03689.jpg" alt="Capacitación" class="showcase-img" id="img-2">
+        </div>
+
+  
+        <div class="content-list">
+            
+            <div class="list-item active" data-index="0">
+                <h3>1. Estándar GTEEX</h3>
+                <p>Aplicación de alta precisión. Máximo control sobre caudales y telemetría en tiempo real con tecnología GTEEX como núcleo.</p>
+            </div>
+            
+            <div class="list-item" data-index="1">
+                <h3>2. Integración Multimarca</h3>
+                <p>Nuestra metodología es extensible. Optimizamos y ponemos en marcha los equipos que ya forman parte de tu inventario agrícola.</p>
+            </div>
+            
+            <div class="list-item" data-index="2">
+                <h3>3. Jornadas en Campo</h3>
+                <p>Entrenamiento operativo in-situ. Preparamos a tu equipo en planificación de misiones y protocolos de seguridad.</p>
+            </div>
+            
+        </div>
+    </div>
+
+
+ <!-- SECCION  SERVICIOS CARDS -->
+<div class="servicios-wrapper">
+    <div class="slider-container">
+        
+        <div class="slider-track" id="track">
+            
+            <article class="card-servicio">
+                <div class="card-img-wrapper">
+                    <img src="img-web/WhatsApp Image 2026-07-08 at 15.32.47.jpeg" alt="Capacitaciones Técnicas">
+                </div>
+                <div class="card-body">
+                    <h3>Capacitaciones<br>Técnicas</h3>
+                    <p>Formación profunda en sistemas de aplicación, planificación de vuelos y seguridad operativa en el lote. Tu equipo dominará el sistema desde el primer día.</p>
+                </div>
+            </article>
+
+            <article class="card-servicio">
+                <div class="card-img-wrapper">
+                    <img src="img-web/DSC03707.jpg" alt="Puesta en Marcha">
+                </div>
+                <div class="card-body">
+                    <h3>Puesta en<br>Marcha</h3>
+                    <p>Configuración inicial, calibración en terreno y primeros vuelos asegurados junto a nuestros especialistas. Dejamos el equipo listo bajo tus condiciones reales.</p>
+                </div>
+            </article>
+
+            <article class="card-servicio">
+                <div class="card-img-wrapper">
+                    <img src="img-web/WhatsApp Image 2026-05-19 at 16.34.29-3.jpeg" alt="Acompañamiento Operativo">
+                </div>
+                <div class="card-body">
+                    <h3>Acompañamiento<br>Operativo</h3>
+                    <p>Soporte continuo durante las campañas. Resolvemos desafíos reales en tiempo real para optimizar la productividad y minimizar tiempos muertos en el lote.</p>
+                </div>
+            </article>
+
+        </div>
+    </div>
+
+    
+    <div class="slider-controls">
+        <button class="slider-btn btn-prev" onclick="moverSlider(-1)" aria-label="Anterior">
+         
+            <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.5 15L1.5 8L8.5 1" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        
+     
+        <div class="slider-pagination">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+        </div>
+
+        <button class="slider-btn btn-next" onclick="moverSlider(1)" aria-label="Siguiente">
+            <!-- SVG Flecha Derecha -->
+            <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.5 1L8.5 8L1.5 15" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+</div>
 
 
 
 
 
+ <!-- SECCION  PRODUCTOS -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--->
 
         <div id="all-products" class="products-container">
             <div class="products-main-text">
@@ -342,6 +378,133 @@ PARTE VALEN sección 3 mobile
         </div>
 
     </div>
+
+
+
+
+
+
+
+
+
+ <!-- SECCION  CONTACTO -->
+
+<div class="contacto-wrapper">
+    <article class="card-contacto">
+        
+        <!-- Encabezado -->
+        <div class="contacto-header">
+            <h2>Contacto</h2>
+            <h3>Fabio Knell</h3>
+        </div>
+
+        <!-- Lista de datos -->
+        <div class="contacto-body">
+            <div class="contacto-row">
+                <span class="contacto-label">Teléfono</span>
+                <span class="contacto-valor">2494 514837</span>
+            </div>
+            
+            <div class="contacto-row">
+                <span class="contacto-label">Email</span>
+                <span class="contacto-valor">fabioknell@yahoo.com.ar</span>
+            </div>
+            
+            <div class="contacto-row">
+                <span class="contacto-label">Instagram</span>
+                <span class="contacto-valor">@agrovector.fk</span>
+            </div>
+            
+            <div class="contacto-row">
+                <span class="contacto-label">Cobertura</span>
+                <span class="contacto-valor">Tandil y la región</span>
+            </div>
+        </div>
+
+        <a href="https://wa.me/5492494514837?text=Hola%20Fabio,%20me%20comunico%20desde%20la%20web%20para%20hacer%20una%20consulta." 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="btn-whatsapp">
+           WhatsApp Directo
+        </a>
+
+    </article>
+</div>
+
+
+
+ <!-- SECCION FOOTER -->
+<footer class="footer-profesional">
+    <div class="footer-grid">
+        
+      
+      <!-- Bloque 1: Marca Institucional -->
+       <div class="footer-brand">
+            
+            <img src="ruta-logo-agrovector.png" alt="Agrovector" class="logo-principal">
+            
+            <div class="brand-logos">
+                <!-- Logos con sus clases individuales -->
+                <img src="img-web/GTEEX-LOGO.png" alt="GTEEX" class="logo-gteex">
+                <img src="img-web/DROPS-LOGO.png" alt="Drops Agro" class="logo-drops">
+                <img src="img-web/TECNOSULF-LOGO.png" alt="Logo Hoja" class="logo-hoja">
+            </div>
+
+            <p>Sistemas integrales para un agro más eficiente. Especialistas en tecnología de aplicación, monitoreo y puesta en marcha de equipos.</p>
+        </div>
+
+
+        <!-- Bloque 2: Navegación -->
+        <div class="footer-col">
+            <h4>Explorar</h4>
+            <ul>
+                <li><a href="#">Sistemas GTEEX</a></li>
+                <li><a href="#">Drones Agrícolas</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Experiencias</a></li>
+                <li><a href="#">Sobre Nosotros</a></li>
+            </ul>
+        </div>
+
+        <!-- Bloque 3: Contacto -->
+        <div class="footer-col">
+            <h4>Atención Comercial</h4>
+            
+            <div class="contacto-info">
+                <div class="contacto-item">
+                    <span class="label">Asesor</span>
+                    <span class="valor">Fabio Knell</span>
+                </div>
+                <div class="contacto-item">
+                    <span class="label">Línea Directa</span>
+                    <span class="valor">2494 514837</span>
+                </div>
+                <div class="contacto-item">
+                    <span class="label">Correo Electrónico</span>
+                    <a href="mailto:fabioknell@yahoo.com.ar" class="contacto-link">fabioknell@yahoo.com.ar</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    
+    <div class="footer-bottom">
+        <span>© 2026 Agrovector. Todos los derechos reservados.</span>
+        <span>Desarrollado para el campo argentino</span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="main.js"></script>
