@@ -656,9 +656,6 @@ button a{
     border-radius: 6px;
 }
 
-
-
-
 .contacto-row:last-child {
     border-bottom: none;
     padding-bottom: 0;
@@ -674,7 +671,6 @@ button a{
     font-family: 'Arimo', sans-serif;
     font-size: 14px;
     color: #111111; 
-    font-weight: 600; 
 }
 
 .btn-whatsapp {
