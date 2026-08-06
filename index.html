@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agrovector</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;600;700&family=Contrail+One&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preload" as="image" href="img-web/DSC03789.webp">
 </head>
 <body>
     <div class="main-container">
@@ -23,13 +23,11 @@
                 <div class="logo">
                     <img class="logo" src="img-web/LOGO AGROVECTOR.webp"  alt="Logo Agrovector">
                 </div>
-                
              
                 <ul class="nav-links">
                 
                     <img class="logo" src="img-web/LOGO AGROVECTOR.webp"  alt="Logo Agrovector">
                     
-                  
                     <li class="item-submenu">
                         <a href="#all-products" class="link-toggle">Productos ></a>
                         
@@ -61,7 +59,7 @@
             </div>
             <div class="main-img-container">
                 
-                <img src="img-web/DSC03789.webp"  alt="">
+                <img src="img-web/DSC03789.webp" fetchpriority="high"  alt="">
             </div>
         </div>
 
@@ -110,14 +108,12 @@
 </div>
     <div class="interactive-container">
         
-    
         <div class="image-showcase">
             <img src="img-web/DSC03791.webp" loading="lazy" alt="GTEEX" class="showcase-img active" id="img-0">
             <img src="img-web/intregracion-multimarca.webp" loading="lazy" alt="Multimarca" class="showcase-img" id="img-1">
             <img src="img-web/DSC03689.webp" loading="lazy" alt="Capacitación" class="showcase-img" id="img-2">
         </div>
 
-  
         <div class="content-list">
             
             <div class="list-item active" data-index="0">
@@ -187,7 +183,6 @@
             </svg>
         </button>
         
-     
         <div class="slider-pagination">
             <span class="dot active" data-index="0"></span>
             <span class="dot" data-index="1"></span>
@@ -202,9 +197,8 @@
         </button>
     </div>
 </div>
+
  <!-- SECCION  PRODUCTOS -->
-
-
         <div id="all-products" class="products-container">
             <div class="products-main-text">
                 <h1 class="underline">COMERCIALIZAMOS PRODUCTOS PARA EL AGRO</h1>
@@ -365,7 +359,6 @@
     </div>
 
  <!-- SECCION  CONTACTO -->
-
 <div class="contacto-wrapper" id="contacto">
     <article class="card-contacto">
         
@@ -408,12 +401,9 @@
     </article>
 </div>
 
-
-
  <!-- SECCION FOOTER -->
 <footer class="footer-profesional">
-    <div class="footer-grid">
-        
+    <div class="footer-grid"> 
       
       <!-- Bloque 1: Marca Institucional -->
        <div class="footer-brand">
@@ -429,7 +419,6 @@
 
             <p>Sistemas integrales para un agro más eficiente. Especialistas en tecnología de aplicación, monitoreo y puesta en marcha de equipos.</p>
         </div>
-
 
         <!-- Bloque 2: Navegación -->
         <div class="footer-col">
@@ -464,24 +453,12 @@
         </div>
 
     </div>
-
     
     <div class="footer-bottom">
         <span>© 2026 Agrovector. Todos los derechos reservados.</span>
         <span>Desarrollado para el campo argentino</span>
     </div>
 </footer>
-
-
-
-
-
-
-
-
-
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="main.js" defer></script>
