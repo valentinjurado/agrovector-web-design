@@ -242,4 +242,62 @@ document.addEventListener('DOMContentLoaded', () => {
 
         iniciarAutoPlayServ();
     }
+
+        // ==============================
+        // CONTADORES ANIMADOS (estadísticas)
+        // ==============================
+        const contadores = document.querySelectorAll('.stat-numero');
+        if (contadores.length && 'IntersectionObserver' in window) {
+            const animarContador = (el) => {
+                const objetivo = Number(el.dataset.contador) || 0;
+                const prefijo = el.dataset.prefijo || '';
+                const sufijo = el.dataset.sufijo || '';
+                const duracion = 1600;
+                const inicio = performance.now();
+                const formato = (n) => n.toLocaleString('es-AR');
+                const paso = (ahora) => {
+                    const progreso = Math.min((ahora - inicio) / duracion, 1);
+                    // easing: suaviza el final
+                    const eased = 1 - Math.pow(1 - progreso, 3);
+                    el.textContent = prefijo + formato(Math.round(objetivo * eased)) + sufijo;
+                    if (progreso < 1) requestAnimationFrame(paso);
+                };
+                requestAnimationFrame(paso);
+            };
+            const obsContadores = new IntersectionObserver((entradas) => {
+                entradas.forEach((entrada) => {
+                    if (entrada.isIntersecting) {
+                        animarContador(entrada.target);
+                        obsContadores.unobserve(entrada.target);
+                    }
+                });
+            }, { threshold: 0.4 });
+            contadores.forEach((c) => obsContadores.observe(c));
+        } else {
+            contadores.forEach((c) => {
+                c.textContent = (c.dataset.prefijo || '') + (Number(c.dataset.contador) || 0).toLocaleString('es-AR') + (c.dataset.sufijo || '');
+            });
+        }
+
+        // ==============================
+        // BOTÓN VOLVER ARRIBA
+        // ==============================
+        const botonArriba = document.getElementById('volver-arriba');
+        if (botonArriba) {
+            botonArriba.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            let esperaFrameBoton = false;
+            const alDesplazarBoton = () => {
+                esperaFrameBoton = false;
+                botonArriba.classList.toggle('visible', window.scrollY > 500);
+            };
+            window.addEventListener('scroll', () => {
+                if (esperaFrameBoton) return;
+                esperaFrameBoton = true;
+                requestAnimationFrame(alDesplazarBoton);
+            }, { passive: true });
+            alDesplazarBoton();
+        }
 });

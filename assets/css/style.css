@@ -1084,7 +1084,7 @@ button a{
     }
     .card-body p {
         font-size: 16px; 
-        line-height: 1.45; /* más compacto para que el link quepa sin estirar la card */
+        line-height: 1.45; 
     }
     .slider-controls {
         display: none; 
@@ -1177,7 +1177,7 @@ button a{
    ANIMACIONES DEL MENÚ MÓVIL (solo <1024px)
    ========================================= */
 
-/* 1) El menú hamburguesa aparece con deslizamiento suave */
+
 .nav-links.activo {
     animation: menuAparecer 0.15s ease-out;
     transform-origin: top center;
@@ -1187,7 +1187,7 @@ button a{
     to   { opacity: 1; transform: translateY(0); }
 }
 
-/* 2) Los items entran uno tras otro (efecto escalonado) */
+
 .nav-links.activo li {
     animation: itemAparecer 0.12s ease-out backwards;
 }
@@ -1199,7 +1199,7 @@ button a{
     to   { opacity: 1; transform: translateX(0); }
 }
 
-/* 3) El submenú de Productos se distingue como lista indentada adentro del menú */
+
 @media (max-width: 1023px) {
     .item-submenu.abierto .submenu {
         margin: 0 0 6px 0;
@@ -1224,20 +1224,92 @@ button a{
     to   { opacity: 1; transform: translateY(0); }
 }
 
-/* 4) El ">" de Productos rota cuando se abre el submenú (móvil y desktop) */
+
 .chevron {
     display: inline-block;
     transition: transform 0.15s ease;
 }
-/* Abierto (toque o click): rota mientras el submenú esté desplegado */
+
 .item-submenu.abierto .chevron {
     transform: rotate(90deg);
 }
-/* Solo con mouse (desktop): rota al pasar el cursor.
-   En pantallas táctiles el :hover queda "pegado" tras tocar,
-   por eso va separado: al tocar de nuevo, la flecha vuelve a su lugar. */
+
 @media (hover: hover) {
     .item-submenu:hover .chevron {
         transform: rotate(90deg);
     }
+}
+
+/* ── SECCIÓN DE ESTADÍSTICAS ── */
+.stats-section {
+    background: linear-gradient(135deg, #0E5831 0%, #0a3f23 100%);
+    color: #fff;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    padding: 46px 7%;
+    text-align: center;
+}
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.stat-numero {
+    font-family: 'Contrail One', display;
+    font-size: 40px;
+    line-height: 1;
+    color: #ffffff;
+}
+.stat-label {
+    font-family: 'Arimo', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.4px;
+    color: rgba(255, 255, 255, 0.85);
+}
+@media (max-width: 1023px) {
+    .stats-section {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+    }
+}
+@media (max-width: 640px) {
+    .stats-section {
+        padding: 36px 5%;
+        gap: 22px;
+    }
+    .stat-numero {
+        font-size: 32px;
+    }
+}
+
+/* ── BOTÓN VOLVER ARRIBA ── */
+.volver-arriba {
+    position: fixed;
+    right: 26px;
+    bottom: 92px;
+    width: 46px;
+    height: 46px;
+    border-radius: 999px;
+    background: #0E5831;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 18px rgba(14, 88, 49, 0.35);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s, background-color 0.2s ease;
+}
+.volver-arriba.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.volver-arriba:hover {
+    background: #0a3f23;
 }
