@@ -679,7 +679,7 @@ button a{
 }
 .logo-principal {
     width: auto;
-    height: 36px;
+    height: 30px;
     object-fit: contain;
     object-position: left;
 }
@@ -715,8 +715,8 @@ button a{
     object-position: left;
 }
 .logo-hoja {
-    width: 45px;
-    height: 40px;
+    width: auto;
+    height: 30px;
     object-fit: contain;
     object-position: left;
 }
@@ -1156,7 +1156,7 @@ button a{
         margin-right: auto;
     }
     .logo-principal {
-        height: 30px;
+        height: 36px;
     }
     .logo-gteex {
         width: 89px;
@@ -1167,8 +1167,8 @@ button a{
         height: 22px;
     }
     .logo-hoja {
-        width: 56px;
-        height: 50px;
+        width: auto;
+        height: 36px;
     }
 }
 
@@ -1201,9 +1201,6 @@ button a{
 
 /* 3) El submenú de Productos se distingue como lista indentada adentro del menú */
 @media (max-width: 1023px) {
-    .logo-principal {
-        height: 28px;
-    }
     .item-submenu.abierto .submenu {
         margin: 0 0 6px 0;
         padding: 0;
