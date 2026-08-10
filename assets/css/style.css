@@ -671,15 +671,36 @@ button a{
 }
 .brand-logos {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
     margin-bottom: 25px;
 }
 .logo-principal {
-    width: 50px;
-    height: 50px;
+    width: auto;
+    height: 36px;
     object-fit: contain;
     object-position: left;
+}
+.brand-logos a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+.brand-logos a img {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.brand-logos a:hover img {
+    opacity: 0.85;
+    transform: scale(1.06);
+}
+.brand-logo-sinlink {
+    cursor: default;
+}
+.brand-logo-sinlink:hover img {
+    opacity: 1;
+    transform: none;
 }
 .logo-gteex {
     width: 75px;
@@ -1134,6 +1155,9 @@ button a{
         margin-left: auto;
         margin-right: auto;
     }
+    .logo-principal {
+        height: 30px;
+    }
     .logo-gteex {
         width: 89px;
         height: 32px;
@@ -1177,6 +1201,9 @@ button a{
 
 /* 3) El submenú de Productos se distingue como lista indentada adentro del menú */
 @media (max-width: 1023px) {
+    .logo-principal {
+        height: 28px;
+    }
     .item-submenu.abierto .submenu {
         margin: 0 0 6px 0;
         padding: 0;
