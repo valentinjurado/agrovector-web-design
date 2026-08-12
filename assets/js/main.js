@@ -1,6 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // ==========================
+    // 0. PRELOADER DE ENTRADA
+    // ==========================
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        const quitarPreloader = () => {
+            preloader.classList.add('oculto');
+            setTimeout(() => preloader.remove(), 700);
+        };
+        const inicio = performance.now();
+        const alCargar = () => {
+            const transcurrido = performance.now() - inicio;
+            setTimeout(quitarPreloader, Math.max(0, 1100 - transcurrido));
+        };
+        if (document.readyState === 'complete') {
+            alCargar();
+        } else {
+            window.addEventListener('load', alCargar, { once: true });
+        }
+        // Red de seguridad: si la carga se traba, el preloader sale igual a los 4s
+        setTimeout(quitarPreloader, 4000);
+    }
+
+    // ==========================
     // 1. SWIPERS (Carruseles)
     // ==========================
     const carrouselContainer = document.querySelector('.carrousel-img-container');
