@@ -1,8 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ==========================
-    // 0. PRELOADER DE ENTRADA
-    // ==========================
     const preloader = document.getElementById('preloader');
     if (preloader) {
         const quitarPreloader = () => {
@@ -323,4 +320,52 @@ document.addEventListener('DOMContentLoaded', () => {
             }, { passive: true });
             alDesplazarBoton();
         }
+
+        const itemsLista = document.querySelectorAll('.list-item');
+        const tituloShow = document.getElementById('showcase-titulo');
+        const capWrap = document.querySelector('.showcase-caption');
+        if (itemsLista.length && tituloShow) {
+            const actualizarLeyenda = (item) => {
+                const t = item.querySelector('h3');
+                if (t) tituloShow.textContent = t.textContent.replace(/^\d+\.\s*/, '').trim();
+                if (capWrap) capWrap.classList.add('visible');
+            };
+            itemsLista.forEach((item) => {
+                item.addEventListener('mouseenter', () => actualizarLeyenda(item));
+                item.addEventListener('click', () => actualizarLeyenda(item));
+            });
+            // estado inicial: el item activo
+            const itemActivo = document.querySelector('.list-item.active');
+            if (itemActivo) actualizarLeyenda(itemActivo);
+        }
+
+        const barraProgreso = document.getElementById('barra-progreso');
+        if (barraProgreso) {
+            const alProgresar = () => {
+                const alto = document.documentElement.scrollHeight - window.innerHeight;
+                barraProgreso.style.width = (alto > 0 ? Math.min((window.scrollY / alto) * 100, 100) : 0) + '%';
+            };
+            window.addEventListener('scroll', alProgresar, { passive: true });
+            alProgresar();
+        }
+});
+/* Favicon adaptativo + entrada animada de la sección de contacto (agosto 2026) */
+document.addEventListener('DOMContentLoaded', () => {
+    const tarjeta = document.querySelector('.card-contacto');
+    if (!tarjeta) return;
+    const envoltorio = tarjeta.closest('.contacto-wrapper');
+    if (!('IntersectionObserver' in window) || !window.matchMedia ||
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return;
+    }
+    envoltorio.classList.add('contacto-anim');
+    const observador = new IntersectionObserver((entries) => {
+        entries.forEach((entrada) => {
+            if (entrada.isIntersecting) {
+                tarjeta.classList.add('visible');
+                observador.disconnect();
+            }
+        });
+    }, { threshold: 0.25 });
+    observador.observe(tarjeta);
 });

@@ -14,6 +14,23 @@
     <meta name="theme-color" content="#0E5831">
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
     <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+    <script>
+    (function () {
+        var link = document.querySelector('link[rel="icon"]');
+        if (!link) return;
+        var blanco = 'data:image/x-icon;base64,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';
+        var mq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+        function setFavicon() {
+            link.href = mq && mq.matches ? blanco : 'assets/img/favicon.ico';
+        }
+        setFavicon();
+        if (mq) {
+            if (mq.addEventListener) mq.addEventListener('change', setFavicon);
+            else if (mq.addListener) mq.addListener(setFavicon);
+        }
+    })();
+    </script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -37,6 +54,8 @@
     <link rel="preload" as="image" href="assets/img/hero-dron-campo.webp">
 </head>
 <body>
+    <!-- Barra de progreso de lectura (solo mobile) -->
+    <div class="barra-progreso" id="barra-progreso" aria-hidden="true"></div>
     <!-- Preloader de entrada (se quita solo al cargar) -->
     <div class="preloader" id="preloader" aria-hidden="true">
         <div class="preloader-logo">
@@ -164,6 +183,7 @@
             <img src="assets/img/capacitaciones/capacitacion-06.webp" loading="lazy" alt="GTEEX" class="showcase-img active" id="img-0">
             <img src="assets/img/capacitaciones/integracion-multimarca.webp" loading="lazy" alt="Multimarca" class="showcase-img" id="img-1">
             <img src="assets/img/capacitaciones/capacitacion-07.webp" loading="lazy" alt="Capacitación" class="showcase-img" id="img-2">
+            <div class="showcase-caption"><span class="showcase-caption-text" id="showcase-titulo">Estándar GTEEX</span></div>
         </div>
 
         <div class="content-list">
@@ -426,21 +446,25 @@
         <!-- Lista de datos -->
         <div class="contacto-body">
             <div class="contacto-row">
+                <span class="contacto-icono" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
                 <span class="contacto-label">Teléfono</span>
                 <span class="contacto-valor">2494 514837</span>
             </div>
             
             <div class="contacto-row">
+                <span class="contacto-icono" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
                 <span class="contacto-label">Email</span>
                 <span class="contacto-valor">fabioknell@yahoo.com.ar</span>
             </div>
             
             <div class="contacto-row">
+                <span class="contacto-icono" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span>
                 <span class="contacto-label">Instagram</span>
                 <span class="contacto-valor">@agrovector.fk</span>
             </div>
             
             <div class="contacto-row">
+                <span class="contacto-icono" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
                 <span class="contacto-label">Cobertura</span>
                 <span class="contacto-valor">Tandil y la región</span>
             </div>
@@ -450,6 +474,7 @@
            target="_blank" 
            rel="noopener noreferrer" 
            class="btn-whatsapp">
+           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
            WhatsApp Directo
         </a>
 
