@@ -348,6 +348,25 @@ document.addEventListener('DOMContentLoaded', () => {
             window.addEventListener('scroll', alProgresar, { passive: true });
             alProgresar();
         }
+
+        // ==============================
+        // APARICIÓN AL SCROLL (reveal)
+        // ==============================
+        const seccionesReveal = document.querySelectorAll(
+            '.stats-section, .capacitaciones-container, .interactive-container, .servicios-wrapper, .products-container, .contacto-wrapper'
+        );
+        if ('IntersectionObserver' in window && seccionesReveal.length) {
+            seccionesReveal.forEach((el) => el.classList.add('reveal'));
+            const observadorReveal = new IntersectionObserver((entradas) => {
+                entradas.forEach((entrada) => {
+                    if (entrada.isIntersecting) {
+                        entrada.target.classList.add('visible');
+                        observadorReveal.unobserve(entrada.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+            seccionesReveal.forEach((el) => observadorReveal.observe(el));
+        }
 });
 /* Favicon adaptativo + entrada animada de la sección de contacto (agosto 2026) */
 document.addEventListener('DOMContentLoaded', () => {

@@ -35,7 +35,6 @@ header {
     display: none; 
 }
 .nav-links.activo {
-    animation: menuDesplegar 0.25s ease-out;
     display: flex;
     flex-direction: column;
     background-color: #F6F5F1;
@@ -1240,7 +1239,7 @@ button a{
 
 
 .nav-links.activo {
-    animation: menuAparecer 0.15s ease-out;
+    animation: menuDesplegar 0.32s ease-out;
     transform-origin: top center;
 }
 @keyframes menuAparecer {
@@ -1323,7 +1322,7 @@ button a{
 .volver-arriba {
     position: fixed;
     right: 26px;
-    bottom: 92px;
+    bottom: 62px;
     width: 46px;
     height: 46px;
     border-radius: 999px;
@@ -1491,7 +1490,7 @@ button a{
 }
 
 @keyframes menuDesplegar {
-    from { opacity: 0; transform: translateY(-10px); }
+    from { opacity: 0; transform: translateY(-22px); }
     to   { opacity: 1; transform: translateY(0); }
 }
 .nav-links.activo li {
@@ -1505,4 +1504,22 @@ button a{
 @keyframes menuItem {
     from { opacity: 0; transform: translateY(-8px); }
     to   { opacity: 1; transform: translateY(0); }
+}
+
+/* APARICIÓN AL SCROLL (reveal) */
+.reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
 }
