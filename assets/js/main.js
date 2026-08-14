@@ -42,10 +42,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const productosGrid = document.querySelector('.productos-grid');
     if (productosGrid) {
         const swiperProductos = new Swiper('.productos-grid', {
-            slidesPerView: 3,     
-            spaceBetween: 8,      
+            slidesPerView: 1.4,
+            spaceBetween: 12,
             grabCursor: true,
             centerInsufficientSlides: true,
+            breakpoints: {
+                768: { slidesPerView: 3, spaceBetween: 20 },
+            },
         });
     }
 
@@ -234,7 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
             reiniciarAutoPlayServ(); 
         }
 
-        // Botones prev/next (antes usaban onclick inline en el HTML)
+       
         const btnPrev = document.querySelector('.btn-prev');
         const btnNext = document.querySelector('.btn-next');
         if (btnPrev) btnPrev.addEventListener('click', () => window.moverSlider(-1));
@@ -334,7 +337,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 item.addEventListener('mouseenter', () => actualizarLeyenda(item));
                 item.addEventListener('click', () => actualizarLeyenda(item));
             });
-            // estado inicial: el item activo
+           
             const itemActivo = document.querySelector('.list-item.active');
             if (itemActivo) actualizarLeyenda(itemActivo);
         }
@@ -349,11 +352,8 @@ document.addEventListener('DOMContentLoaded', () => {
             alProgresar();
         }
 
-        // ==============================
-        // APARICIÓN AL SCROLL (reveal)
-        // ==============================
         const seccionesReveal = document.querySelectorAll(
-            '.stats-section, .capacitaciones-container, .interactive-container, .servicios-wrapper, .products-container, .contacto-wrapper'
+            '.stats-section, .capacitaciones-container, .interactive-container, .interactiva-header, .servicios-wrapper, .products-container, .contacto-wrapper'
         );
         if ('IntersectionObserver' in window && seccionesReveal.length) {
             seccionesReveal.forEach((el) => el.classList.add('reveal'));
@@ -368,7 +368,7 @@ document.addEventListener('DOMContentLoaded', () => {
             seccionesReveal.forEach((el) => observadorReveal.observe(el));
         }
 });
-/* Favicon adaptativo + entrada animada de la sección de contacto (agosto 2026) */
+/* Favicon adaptativo */
 document.addEventListener('DOMContentLoaded', () => {
     const tarjeta = document.querySelector('.card-contacto');
     if (!tarjeta) return;
