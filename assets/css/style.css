@@ -249,9 +249,11 @@ button a{
 /*PRODUCTOS*/
 .products-container{
     padding-top: 50px;
+    background-color: #F6F5F1;
+    padding-bottom: 50px;
 }
 .products-main-info {
-    background-color: #F6F5F1;
+    background-color: #FFFFFF;
     width: 90%;
     margin: 0 auto; /* Esto lo centra perfecto alineado con el texto de arriba */
     height: auto;
@@ -357,7 +359,12 @@ button a{
     display: grid;
     grid-template-columns: 1fr; 
     gap: 20px;
-    padding: 0 20px; 
+    padding: 40px 20px; 
+    background-color: #F0F5F1;
+    border-top: 1px solid #E2EAE4;
+    border-bottom: 1px solid #E2EAE4;
+    box-shadow: 0 0 0 100vmax #F0F5F1;
+    clip-path: inset(0 -100vmax);
 }
 .image-showcase {
     position: relative;
@@ -1095,7 +1102,7 @@ button a{
         grid-template-columns: 1fr 1.15fr; 
         gap: 44px; 
         align-items: center; 
-        padding: 0 40px; 
+        padding: 60px 40px; 
     }
     .image-showcase { 
         height: 490px; 
