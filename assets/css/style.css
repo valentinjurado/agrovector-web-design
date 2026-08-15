@@ -137,6 +137,7 @@ h1, h2, h3{
 p{
     font-size: 16px;
     font-family: 'Arimo', display;
+    color: #4a5560;
 }
 .main-info-container{
     width: 100%;
@@ -346,6 +347,13 @@ button a{
     box-shadow: 0 6px 18px rgba(14, 88, 49, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.producto-link {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+}
 .producto-item img {
     order: -1;
     width: 100%;
@@ -453,7 +461,7 @@ button a{
 }
 .list-item p { 
     margin: 0; 
-    color: #000000; 
+    color: #4a5560; 
     line-height: 1.5; 
     max-height: 0; 
     overflow: hidden; 
@@ -474,7 +482,7 @@ button a{
     max-height: 120px; 
     opacity: 1; 
     margin-top: 10px; 
-    color: #000000; 
+    color: #4a5560; 
 }
 
 /* ========================================= */
@@ -550,7 +558,7 @@ button a{
 .card-body p {
     font-family: 'Arimo', sans-serif;
     font-size: 16px;
-    color: #334155;
+    color: #4a5560;
     line-height: 1.55;
     margin: 0;
 }
@@ -854,6 +862,18 @@ button a{
 .logo-hoja {
     width: auto;
     height: 30px;
+    object-fit: contain;
+    object-position: left;
+}
+.logo-spraytec {
+    width: 75px;
+    height: 26px;
+    object-fit: contain;
+    object-position: left;
+}
+.logo-agroadvance {
+    width: auto;
+    height: 26px;
     object-fit: contain;
     object-position: left;
 }
