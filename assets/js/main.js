@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (preloader) {
         const quitarPreloader = () => {
             preloader.classList.add('oculto');
+            document.body.classList.add('cargado');
             setTimeout(() => preloader.remove(), 700);
         };
         const inicio = performance.now();
@@ -102,6 +103,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const manejarScroll = function () {
             enEsperaDeFrame = false;
             const desplazamientoActual = window.scrollY;
+
+            if (desplazamientoActual > 50 && menuLinks && menuLinks.classList.contains('activo')) {
+                menuLinks.classList.remove('activo');
+                if (itemSubMenu) itemSubMenu.classList.remove('abierto');
+                if (botonMenu) botonMenu.setAttribute('aria-expanded', 'false');
+            }
 
             if (desplazamientoActual <= 100) {
                 header.classList.remove('hidden-header');
