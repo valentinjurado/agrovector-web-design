@@ -1066,7 +1066,8 @@ button a{
         margin-right: auto;
         padding: 0;
         margin: 0 auto 0 40px;
-        height: auto;
+        height: 100%;
+        align-items: center;
     }
     .nav-links .logo,
     .mobile-contact-btn{
@@ -1084,6 +1085,9 @@ button a{
     }
     .item-submenu {
         position: relative; /* Sirve de ancla para que el submenú caiga justo debajo */
+        height: 100%;
+        display: flex;
+        align-items: center;
     }
     .submenu {
         display: none; /* Aseguramos que siga oculto */
