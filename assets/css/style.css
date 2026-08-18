@@ -411,19 +411,20 @@ button a{
     grid-template-columns: 1fr; 
     gap: 20px;
     padding: 40px 20px; 
-    background-color: #F0F5F1;
+    background-color: #0E5831;
     border-top: 1px solid #E2EAE4;
     border-bottom: 1px solid #E2EAE4;
-    box-shadow: 0 0 0 100vmax #F0F5F1;
+    box-shadow: 0 0 0 100vmax #0E5831;
     clip-path: inset(0 -100vmax);
 }
 .image-showcase {
     position: relative;
-    height: 280px; 
+    height: 300px; 
     width: 100%; 
     margin: 0 auto; 
     overflow: hidden;
-    box-shadow: 0px 20px 30px 0px rgba(0, 0, 0, 0.4);
+    
+    box-shadow: 0px 20px 30px 0px rgba(0, 0, 0, 0.25);
 }
 .showcase-img {
     position: absolute;
@@ -445,15 +446,26 @@ button a{
     gap: 10px; 
 }
 .list-item {
-    padding: 15px 15px 15px 19px; 
-    border-left: 4px solid #000000;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    padding: 16px 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     cursor: pointer;
     transition: all 0.3s ease;
     -webkit-tap-highlight-color: transparent; 
 }
+.list-item .num {
+    font-family: 'Contrail One', display;
+    font-size: 34px;
+    color: rgba(255, 255, 255, 0.35);
+    line-height: 1;
+    min-width: 46px;
+    transition: color 0.3s ease;
+}
 .list-item h3 { 
     margin: 0 0 5px 0; 
-    color: #000000; 
+    color: #ffffff; 
     transition: color 0.3s; 
     font-family: 'Contrail One', display;
     font-weight: 400; 
@@ -461,7 +473,7 @@ button a{
 }
 .list-item p { 
     margin: 0; 
-    color: #4a5560; 
+    color: rgba(255, 255, 255, 0.85); 
     line-height: 1.5; 
     max-height: 0; 
     overflow: hidden; 
@@ -472,17 +484,19 @@ button a{
     font-size: 16px; 
 }
 .list-item:hover, .list-item.active {
-    border-left-color: #0E5831;
-    background-color: #F6F5F1;
+    border-bottom-color: #9BD8B0;
+}
+.list-item:hover .num, .list-item.active .num {
+    color: #9BD8B0;
 }
 .list-item:hover h3, .list-item.active h3 { 
-    color: #0E5831; 
+    color: #9BD8B0; 
 }
 .list-item:hover p, .list-item.active p { 
     max-height: 120px; 
     opacity: 1; 
     margin-top: 10px; 
-    color: #4a5560; 
+    color: rgba(255, 255, 255, 0.9); 
 }
 
 /* ========================================= */
@@ -1024,7 +1038,7 @@ button a{
         height: 400px; 
     }
     .list-item h3 { 
-        font-size: 28px; 
+        font-size: 26px; 
         margin: 0; 
     }
     .list-item.active h3 {
@@ -1190,37 +1204,30 @@ button a{
 
     /* seccion 3 */
   .interactive-container { 
-        margin: 100px auto 0 auto;
-        max-width: 1082px;
-        grid-template-columns: 1fr 1.15fr; 
-        gap: 44px; 
-        align-items: center; 
-        padding: 60px 40px; 
-    }
-    .image-showcase { 
-        height: 490px; 
-        width: 100%;
-        max-width: 490px;
-        margin: 0; 
-    }
-    .content-list {
-        height: 490px; 
-        justify-content: center;
-    }
+      margin: 100px auto 0 auto;
+      max-width: 1120px;
+      grid-template-columns: 1.20fr 1fr; 
+      gap: 56px; 
+      align-items: center; 
+      padding: 60px 40px; 
+  }
+  .image-showcase { 
+      height: 600px; 
+      width: 100%;
+      max-width: 640px;
+      margin: 0; 
+  }
+  .content-list {
+      height: 560px; 
+      justify-content: center;
+      gap: 22px;
+  }
     .list-item {
-        height: 98px; 
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        padding: 10px 8px;
         align-items: center;
-        text-align: center;
-        padding: 0 20px 0 19px; 
-        background: #f4f4f2; 
     }
     .list-item.active {
-        height: 161px;
-        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08); 
-        background: #f8f8f6; 
+        padding: 14px 8px;
     }
     /* seccion 3 cards */
 
