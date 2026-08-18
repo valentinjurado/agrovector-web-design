@@ -107,6 +107,7 @@ header {
 .submenu {
     display: none;
     flex-direction: column;
+    position: absolute;
     padding: 6px 0 2px 14px;
     margin-top: 4px;
     background-color: transparent;
@@ -1126,7 +1127,8 @@ button a{
         align-items: center;
     }
     .nav-links .logo,
-    .mobile-contact-btn{
+    .mobile-contact-btn,
+    .menu-cerrar{
         display: none;
     }
 
