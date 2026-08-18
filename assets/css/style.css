@@ -11,9 +11,9 @@ html{
 }
 header {
     position: sticky;
-    top: 0;                  /* Lo suelda al techo de la pantalla */
-    z-index: 1000;           /* Asegura que siempre esté por encima de las fotos al scrollear */
-    background-color: #F6F5F1; /* Fondo blanco para que no se mezclen las letras */
+    top: 0;                 
+    z-index: 1000;           
+    background-color: #F6F5F1; 
     transition: all 0.3s ease-in-out;
 }
 .hidden-header{
@@ -25,11 +25,11 @@ header {
 .navbar {
     position: relative;
     display: flex;
-    justify-content: space-between; /* Logo a la izq, hamburguesa a la der */
+    justify-content: space-between; 
     align-items: center;
     padding: 0px 20px 0px 20px;
 }
-/* Ocultamos los links sueltos en el celular */
+
 .nav-links {
     height: auto;
     display: none; 
@@ -39,15 +39,58 @@ header {
     flex-direction: column;
     background-color: #F6F5F1;
     position: absolute;
-    top: 100%;
+    top: 0;
     left: 0;
-    width: min(260px, 80%);
-    padding: 16px 24px 28px;
-    box-shadow: 0 18px 40px rgba(7, 32, 18, 0.18);
+    width: min(300px, 85%);
+    height: 100vh;
+    min-height: 100vh;
+    padding: 24px 24px 90px;
+    box-shadow: 0 18px 40px rgba(7, 32, 18, 0.25);
+    overflow-y: auto;
+    z-index: 1000;
 }
-.nav-links.activo li {
+.nav-links.activo > .logo {
+    width: 62px;
+    margin: 8px auto 26px;
+    display: block;
+}
+.menu-cerrar {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: none;
+    border: none;
+    font-size: 26px;
+    line-height: 1;
+    color: #14302a;
+    cursor: pointer;
+    padding: 6px;
+    transition: color 0.2s ease, transform 0.2s ease;
+    z-index: 1;
+}
+.menu-cerrar:hover {
+    color: #0E5831;
+    transform: rotate(90deg);
+}
+.nav-links.activo > li {
     padding: 10px 0;
     list-style: none;
+}
+.nav-links.activo > .item-submenu {
+    padding: 10px 0 4px;
+}
+.nav-links.activo .link-toggle,
+.nav-links.activo > li > a {
+    font-size: 19px;
+    padding: 4px 0;
+}
+.nav-links.activo .mobile-contact-btn {
+    position: absolute;
+    bottom: 26px;
+    left: 24px;
+    right: 24px;
+    width: auto;
+    margin: 0;
 }
 
 .nav-links.activo li a {
@@ -72,12 +115,13 @@ header {
 }
 .submenu li {
     padding: 9px 0;
+    list-style: none;
 }
 .submenu li a {
     font-size: 16px;
     color: #313418;
 }
-/* Esta clase se la agregará el JS cuando toquen la palabra "productos" */
+
 .item-submenu.abierto .submenu {
     display: flex;
 }
@@ -101,11 +145,11 @@ header {
     transform: translateY(-2px);
     box-shadow: 0px 6px 10px rgba(14, 88, 49, 0.5);
 }
-/* Ocultamos el botón verde en el celular */
+
 .desktop-contact-btn {
     display: none;
 }
-/* Estilo para que la hamburguesa se vea bien */
+
 .menu-desplegable {
     background: none;
     border: none;
@@ -146,7 +190,7 @@ p{
 .main-text-container {
     background-color: #F6F5F1;
     width: 100%;
-    padding: 24px 16px 10px 16px; /* Achicamos el de abajo a 16px */
+    padding: 24px 16px 10px 16px; 
     box-sizing: border-box;
 }
 .main-text-container h1{
@@ -166,7 +210,7 @@ button a{
     color: white;
     font-family: 'Arimo', sans-serif;
 }
-/* 2. Estilos visuales del botón para TODO tamaño de pantalla */
+
 .btn-conoce-mas {
     display: block;
     background-color: #0E5831;
@@ -175,10 +219,9 @@ button a{
     border: none;
     border-radius: 30px; 
     font-size: 13px;
-    /* Lo posicionamos flotando sobre la imagen */
     position: absolute;
-    top: 15px;    /* Un poco menos de margen que en la PC */
-    right: 15px;  /* Pegadito a la derecha */
+    top: 15px;    
+    right: 15px; 
     z-index: 10;
     white-space: nowrap;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -188,10 +231,10 @@ button a{
     box-shadow: 0px 6px 10px rgba(14, 88, 49, 0.5);
 }
 .main-img-container img {
-    width: 100%;       /* Tope máximo: el ancho de la pantalla */
-    height: 369px;     /* La altura que querés en el diseño */
-    object-fit: cover; /* Recorta los bordes de la foto sin deformarla */
-    display: block;    /* Saca un espacio fantasma de 4px que suele quedar abajo de las fotos */
+    width: 100%;       
+    height: 369px;     
+    object-fit: cover;
+    display: block;    
 }
 
 /*CAPACITACIONES*/
@@ -204,7 +247,7 @@ button a{
 .capacitaciones-text-container {
     width: 87%;
     margin: 0 auto;
-    padding-bottom: 15px; /* Un poco de aire antes de que arranque el carrusel */
+    padding-bottom: 15px; 
 }
 .capacitaciones-text-container {
     text-align: center;
@@ -215,17 +258,17 @@ button a{
 }
 /*carrousel fotos capacitaciones*/
 .carrousel-img-container {
-    width: 95%;          /* Lo achicamos para que mida exactamente igual que tu texto */
-    margin: 0 auto;      /* Lo centramos para que los márgenes coincidan */
-    padding-bottom: 30px; /* Mantenemos el espacio de los puntitos */
+    width: 95%;          
+    margin: 0 auto;      
+    padding-bottom: 30px; 
 }
-/* Le das un alto fijo al contenedor de la grilla en mobile */
+
 .swiper-slide {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 6px;
-  height: 173px; /* Ajustás esta altura general y el grid escala las fotos solo */
+  height: 173px; 
 }
 .swiper-slide img {
   width: 100%;
@@ -234,19 +277,19 @@ button a{
 }
 .swiper-slide .big-img1 {
   grid-column: 1;
-  grid-row: 1 / 3; /* Ocupa columna 1 completa (alto total) */
+  grid-row: 1 / 3; 
 }
 .swiper-slide .small-img1 {
   grid-column: 2;
-  grid-row: 1;     /* Columna centro, arriba */
+  grid-row: 1;    
 }
 .swiper-slide .small-img2 {
   grid-column: 2;
-  grid-row: 2;    /* Columna centro, abajo */
+  grid-row: 2;    
 }
 .swiper-slide .big-img2 {
   grid-column: 3;
-  grid-row: 1 / 3; /* Ocupa columna 3 completa (alto total) */
+  grid-row: 1 / 3; 
 }
 .swiper-slide .big-img1, 
 .swiper-slide .big-img2{
@@ -263,7 +306,7 @@ button a{
     background-color: #0E5831;
     opacity: 0.4;
     margin: 0 6px ;
-    transition: all 0.3s ease;  /* Animación suave cuando cambia de slide */
+    transition: all 0.3s ease;  
 }
 .swiper-pagination-bullet-active {
     width: 30px;
@@ -280,14 +323,14 @@ button a{
 .products-main-info {
     background-color: #FFFFFF;
     width: 90%;
-    margin: 0 auto; /* Esto lo centra perfecto alineado con el texto de arriba */
+    margin: 0 auto; 
     height: auto;
-    padding: 20px; /* Espacio interno para que las marcas no toquen los bordes */
+    padding: 20px; 
 }
 .products-main-text {
     width: 90%;
     margin: 0 auto;
-    padding-bottom: 20px; /* Un poco de aire antes de la caja de marcas */
+    padding-bottom: 20px; 
     text-align: center;
 }
 .products-main-text h1,
@@ -301,14 +344,14 @@ button a{
     font-size: 16px;
     
 }
-/* Centra el contenedor para que quede angosto al medio */
+
 .brand-text {
     width: 85%;
     margin: 0 auto;
     text-align: center;
-    margin-bottom: 23px; /* Espacio antes de los productos */
+    margin-bottom: 23px; 
 }
-/* Centra el H1 específicamente (como en tu diseño) */
+
 .brand-text h1,
 .brand-text h2,
 .brand-text h3 {
@@ -547,7 +590,7 @@ button a{
     width: 100%;
     height: 200px; 
     overflow: hidden;
-    flex-shrink: 0; /* la foto nunca se encoge: las 3 cards quedan alineadas */
+    flex-shrink: 0; 
 }
 .card-img-wrapper img {
     width: 100%;
@@ -576,8 +619,7 @@ button a{
     line-height: 1.55;
     margin: 0;
 }
-/* Link "Conocé más" en su propia línea, debajo del párrafo:
-   verde, negrita, subrayado sutil y flecha que se desliza al hover */
+
 .mas-info {
     display: inline-block;
     margin-top: 8px;
@@ -601,7 +643,7 @@ button a{
 .mas-info:hover::after {
     transform: translateX(3px);
 }
-/* Espacio invisible reservado en las otras cards (mismo alto que el link) */
+
 .mas-info--placeholder {
     visibility: hidden;
     pointer-events: none;
@@ -1009,7 +1051,7 @@ button a{
             background-color: #218838;
             color: #ffffff;
         }
-        /* Contenedor responsivo para el PDF */
+   
         .pdf-viewer-container {
             width: 100%;
             height: 80vh;
@@ -1087,7 +1129,7 @@ button a{
     .mobile-contact-btn{
         display: none;
     }
-    /* Le damos el estilo a los textos del menú */
+
     .nav-links li a {
         text-decoration: none;
         font-family: 'Arimo', sans-serif;
@@ -1098,17 +1140,16 @@ button a{
         color: #0E5831;
     }
     .item-submenu {
-        position: relative; /* Sirve de ancla para que el submenú caiga justo debajo */
+        position: relative; 
         height: 100%;
         display: flex;
         align-items: center;
     }
     .submenu {
-        display: none; /* Aseguramos que siga oculto */
-        position: absolute;
-        top: 100%; /* Cae justo debajo de la barra */
+        display: none;
+        top: 100%; 
         left: 50%;
-        transform: translateX(-30%); /* Lo centra perfectamente con la palabra 'productos' */
+        transform: translateX(-30%);
         list-style: none;
         min-width: 200px;
         padding: 10px 0;
@@ -1117,7 +1158,7 @@ button a{
         border-left: 2px solid rgba(14, 88, 49, 0.25);
         box-shadow: 0 12px 28px rgba(7, 32, 18, 0.16);
     }
-    /* En la compu, el submenú aparece al pasar el MOUSE (hover), no hace falta hacer click */
+ 
     .item-submenu:hover .submenu {
         display: flex;
     }
@@ -1131,10 +1172,10 @@ button a{
         text-align: left;
     }
     .submenu li a:hover {
-        color: #0E5831; /* Un verde más claro al pasar el mouse por las opciones */
+        color: #0E5831; 
     
     }
-    /* 4. Mostramos el botón de CONTACTANOS y le damos estilo */
+  
     .desktop-contact-btn {
         display: flex;
         align-items: center;
@@ -1402,16 +1443,16 @@ button a{
 
 .chevron {
     display: inline-block;
-    transition: transform 0.15s ease;
+    transition: transform 0.25s ease;
 }
 
 .item-submenu.abierto .chevron {
-    transform: rotate(90deg);
+    transform: rotate(180deg);
 }
 
 @media (hover: hover) {
     .item-submenu:hover .chevron {
-        transform: rotate(90deg);
+        transform: rotate(180deg);
     }
 }
 

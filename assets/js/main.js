@@ -58,10 +58,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // ===========================
     const botonMenu = document.querySelector('.menu-desplegable');
     const menuLinks = document.querySelector('.nav-links'); 
+    const botonCerrar = document.querySelector('.menu-cerrar');
 
     if (botonMenu && menuLinks) {
         botonMenu.addEventListener('click', function(){
             menuLinks.classList.toggle('activo');
+        });
+    }
+
+    if (botonCerrar && menuLinks) {
+        botonCerrar.addEventListener('click', function(){
+            menuLinks.classList.remove('activo');
         });
     }
 
