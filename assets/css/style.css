@@ -107,7 +107,7 @@ header {
 .submenu {
     display: none;
     flex-direction: column;
-    position: absolute;
+  
     padding: 6px 0 2px 14px;
     margin-top: 4px;
     background-color: transparent;
@@ -1141,14 +1141,18 @@ button a{
     .nav-links li a:hover {
         color: #0E5831;
     }
+    
     .item-submenu {
         position: relative; 
         height: 100%;
         display: flex;
         align-items: center;
     }
+
     .submenu {
+        position: absolute; 
         display: none;
+        flex-direction: column; 
         top: 100%; 
         left: 50%;
         transform: translateX(-30%);
@@ -1164,10 +1168,10 @@ button a{
     .item-submenu:hover .submenu {
         display: flex;
     }
-    .submenu li:hover{
+
+    .submenu li:hover {
          transform: scale(1.05); 
          transition: transform 0.3s ease;
-       
     }
     .submenu li {
         padding: 10px 20px;
